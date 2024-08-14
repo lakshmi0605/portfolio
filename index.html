@@ -25,7 +25,7 @@
         </div> -->
         <div id="book-container">
            
-            <section id="coverPage" class="cover" onclick="onClick(event)"></section>
+            <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
             <section id="homePage" class="home page">
                 <div class="content">
                     <p class="home__content--welcome">WELCOME TO MY PORTFOLIO</p>
@@ -36,35 +36,35 @@
                     <p class="home__content--description">I transform beautiful designs into dynamic code and bringing your vision to life with precision. Crafting concepts into vibrant realities through expert craftsmanship.</p>
                   </div>
                   <div class="navButtons">
-                    <button id="to-coverPage" class="prevBtn" onClick="onClickBack(event)"> Prev </button>
-                    <button class="nextBtn" onClick="onClick(event)">Next</button>
+                    <button id="to-coverPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                    <button id="from-homePage" class="nextBtn" onClick="onClick(event)"> Next </button>
                   </div>
                  
             </section>
             <section id="aboutPage" class="about page">
                 <h1>About</h1>
                 <div class="navButtons">
-                    <button id="to-coverPage" class="prevBtn" onClick="onClickBack(event)"> Prev </button>
-                    <button class="nextBtn" onClick="onClick(event)">Next</button>
+                    <button id="to-homePage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                    <button id="from-aboutPage" class="nextBtn" onClick="onClick(event)"> Next </button>
                   </div>
             </section>
             <section id="portfolioPage" class="portfolio page">
                 <h1>Portfolio</h1>
                 <div class="navButtons">
-                    <button id="to-coverPage" class="prevBtn" onClick="onClickBack(event)"> Prev </button>
-                    <button class="nextBtn" onClick="onClick(event)">Next</button>
+                    <button id="to-aboutPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                    <button id="from-portfolioPage" class="nextBtn" onClick="onClick(event)"> Next </button>
                   </div>
             </section>
             <section id="contactPage" class="contact page">
                 <h1>Contact</h1>
                 <div class="navButtons">
-                    <button id="to-coverPage" class="prevBtn" onClick="onClickBack(event)"> Prev </button>
-                    <button class="nextBtn" onClick="onClick(event)">Next</button>
+                    <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                    <button id="from-contactPage" class="nextBtn" onClick="onClick(event)"> Next </button>
                   </div>
             </section>
             <section id="endPage" class="end back-cover">
                 <h1>THE END</h1>
-                    <button id="to-coverPage" class="prevBtn" onClick="onClickBack(event)"> Prev </button>
+                    <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
             </section>
              <div class="spiral-container">
                 <div class="rings">
