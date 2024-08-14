@@ -1,0 +1,319 @@
+*{
+    margin:0;
+    padding:0;
+    border-sizing:border-box;
+    /* border:1px solid pink; */
+}
+
+:root{
+    --primary-color:black;
+    --secondary-color:#C0C0C0;
+    --text-primary-color:black;
+    --text-secondary-color:white;
+}
+
+.main{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    height:100vh;
+    width:100vw;
+}
+
+#index-container{
+    position:relative;
+    width:20%;
+    border:1px solid black;
+    background-color:white;
+}
+
+.index{
+    position:absolute;
+    background-color:black;
+    border-radius:25%;
+    width:200%;
+    height:100%;
+    left:-100%;
+    display:flex;
+}
+.empty{
+    width:50%;
+}
+
+.index__listContainer{
+    width:50%;
+    color:white;
+   
+    
+}
+
+.index__list{
+    list-style-type:none;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:3rem;
+    height:100%;
+}
+
+#book-container{
+   position:relative;
+   width:100%;
+   margin:10rem 15rem 5rem 15rem ;
+   border-radius:10px;
+   perspective:1500px;
+   transform:rotateX(20deg);
+}
+
+.cover{
+    transform:rotateX(20deg);
+}
+
+.home{
+    transform:rotateX(20deg)
+}
+
+.about{
+    transform:rotateX(20deg);
+}
+
+.portfolio{
+    transform:rotateX(20deg)
+}
+
+.contact{
+    transform:rotateX(20deg)
+}
+.end{
+    transform:rotateX(20deg) 
+}
+
+.spiral-container {
+    position: absolute;
+    perspective:1000px;
+    width: 10%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    left:-1.5rem;
+    top:-1%;
+    bottom:5%;
+    transform:rotateX(20deg);
+    z-index:1000;
+  }
+
+  .rings{
+    height:100%;
+    transform: rotateX(0deg) rotateY(0deg);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-bottom:500px;
+  }
+
+  .circleContainer{
+    height:calc(100%/10);
+    perspective: 1000px; 
+    overflow:hidden;
+  }
+
+  .circle {
+    width: 42px; /* Ring diameter */
+    height: 42px;
+    border:5px solid #F3E5AB;
+    border-radius: 50%;
+    position: absolute;
+    transform-style: preserve-3d; /* Ensures 3D transforms are preserved */
+    transform: rotateX(30deg) rotateZ(120deg) rotateY(-90deg) ;
+  }
+
+  .ring-innerPage{
+    transform: rotateX(-90deg) rotateZ(120deg) rotateY(-90deg) translateX(15px);
+  }
+
+  section{
+    border-radius:20px;
+    /* box-shadow:15px 15px 5px gold; */
+  }
+
+
+
+  .cover,  .back-cover{
+    height:100%;
+    width:100%;
+  }
+
+  .cover{
+    background:url(/home-bkg.jpg);
+    object-fit:cover;
+    filter: grayscale(100%);
+    cursor:pointer;
+    transform-origin:center left;
+    transition:all 3s;
+    position:absolute;
+    z-index:5;
+  }
+
+  .back-cover{
+    position:relative;
+    z-index: -1;
+    background-color:gray;
+  }
+
+  .coverClick, .homeClick, .aboutClick, .portfolioClick, .contactClick{
+    transform: rotateX(20deg) rotateY(-240deg);
+  }
+
+/* 
+  .coverBottom{
+    z-index:-1;
+  }
+  .homeBottom{
+    z-index:1;
+  }
+
+  .aboutBottom{
+    z-index:2;
+  }
+  .portfolioBottom{
+    z-index:3;
+  }
+
+  .contactBottom{
+    z-index:4;
+  } */
+/*   
+  .coverClick{
+    z-index:-1;
+  }
+
+  .homeClick{
+    z-index:1;
+  }
+
+  .aboutClick{
+    z-index:2;
+  }
+  .portfolioClick{
+    z-index:3;
+  }
+
+  .contactClick{
+    z-index:4;
+  } */
+
+  
+  /* #book-container:hover .cover{
+    
+  } */
+
+  /* #book-container:hover .page{
+    transform:  rotateY(-180deg);
+  } */
+
+
+  .page{
+    transform-origin:center left;
+    transition:all 4s;
+    /* backface-visibility:hidden; */
+  }
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    pointer-events: none; 
+    border-radius:20px;
+  }
+
+
+.content {
+    height:100%;
+    color: #fff; 
+    text-align: center; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:2rem;
+
+  }
+
+  .home{
+    position:absolute;
+    background-color:black;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:4;
+  }
+
+  .home__content--welcome{
+    letter-spacing: 0.15rem;
+  }
+  
+  .home__content--name h2{
+    font-size:3.5rem;
+    letter-spacing:0.1rem
+  }
+
+  .home__content--description{
+    max-width:32rem;
+    line-height:1.5rem;
+    letter-spacing:0.08rem;
+  }
+
+  .home__content--role{
+    font-size:2rem;
+    letter-spacing:0.05rem;
+  }
+
+  .navButtons{
+    margin-bottom:2rem;
+    display:flex;
+    justify-content:space-between;
+    width:30%;
+  }
+
+  .prevBtn, .nextBtn{
+    background-color:transparent;
+    color:white;
+    padding:15px;
+    letter-spacing:0.1rem;
+    border-radius:50%;
+    border:1px solid white;
+    box-shadow:2px 2px 5px 1px white;
+  }
+
+   .about, .portfolio, .contact, .back-cover{
+    position:absolute;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:3rem;
+  }
+
+  .about{
+    background-color:green;
+    z-index:3
+  }
+
+  .portfolio{
+    background-color:pink;
+    z-index:2;
+  }
+
+  .contact{
+    background-color:orange;
+    z-index:1;
+  }
