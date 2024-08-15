@@ -218,11 +218,41 @@ body{
     letter-spacing:0.05rem;
   }
 
+  .home__content--socials{
+    display:flex;
+    gap:1rem;
+  }
+
+  .home__content--socials a{
+    border:2px solid beige;
+    border-radius: 10px;
+    padding:5px;
+    transition: all 1s ease;
+  }
+
+  .home__content--socials a:hover, .contact-btn:hover{
+    background: linear-gradient(to right bottom, #ffea00,#ffaa00, #ff7b00);
+    border: 1px solid #e4e4e4;
+    transform: scale(1.1);
+    color:black;
+    /* box-shadow: 1px 1px 25px 2px white,2px 2px 25px 3px #f0f0f0; */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), /* Soft white glow */
+    1px 1px 12px rgba(255, 255, 200, 0.4), /* Slight yellow glow */
+    2px 2px 16px rgba(255, 255, 255, 0.2); /* Larger white outer glow */
+  }
+
+
+  .social-icon{
+    font-size:25px;
+    color:white;
+  }
+
   .navButtons{
     margin-bottom:3rem;
     display:flex;
     justify-content:space-between;
     width:30%;
+    padding:5px;
   }
 
   .prevBtn, .nextBtn{
@@ -232,15 +262,17 @@ body{
     letter-spacing:0.1rem;
     border-radius:50%;
     border:1px solid white;
-    box-shadow:2px 2px 5px 1px white;
+    box-shadow:0px 1px 15px 2px rgb(255,255,255,0.5);
   }
+
 
   .about{
     z-index:3
   }
 
   .portfolio{
-    z-index:2;
+    /* z-index:2; */
+    z-index:20;
   }
 
   .contact{
@@ -253,8 +285,9 @@ body{
     width:100%;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-end;
     align-items:center;
+    gap:1rem;
   }
 
   .back-cover{
@@ -297,13 +330,95 @@ body{
 .contact-btn{
   padding:10px;
   border-radius:20px;
+  letter-spacing:0.1rem;
+  font-weight:500;
   background-color:transparent;
   color:white;
-  margin-top:0.5rem;
-  box-shadow:1px 1px 15px 4px yellow;
+  margin-top:1rem;
+  border:1px solid #FFDD00;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), /* Soft white glow */
+    2px 2px 12px 2px rgba(255, 149, 0, 0.4);
 }
 
 .back-cover h1{
   margin-bottom:15%;
   margin-top:25%;
+}
+
+.portfolio__projects{
+  width:85%;
+  border:1px solid white;
+  display:grid;
+  gap:10px;
+  border-radius:20px;
+  grid-template-rows: 150px 150px;
+  padding:1rem;
+
+}
+
+.portfolio__projects--item{
+  position:relative;
+  border:1px solid white;
+  border-radius:15px;
+  filter:grayscale(100%);
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.portfolio__projects--item::before{
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius:15px;
+  z-index: 1;
+}
+
+.portfolio__projects--item:hover{
+  filter:none;
+  
+}
+
+
+.portfolio__projects--item:hover::before{
+  opacity:0.4;
+}
+
+
+.project-1{
+  grid-column: 1/5;
+  background: url("https://static.vecteezy.com/system/resources/previews/023/139/227/large_2x/colorful-macarons-with-sugar-powder-explosion-moment-on-black-background-neural-network-generated-art-photo.jpg");
+  background-size:contain ;
+  
+}
+
+.project-2{
+  grid-column: 5/7;
+  background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSceM8CVRX08d0op2xZbEbD5je_xQbNF6AE3w&s");
+  background-size:contain ;
+  
+}
+.project-3{
+  grid-column: 1/4;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHB7YTzYvVi1lzEoUiU9jnYese1IbjDSB48Q&s");
+  background-size:contain;
+}
+
+.project-4{
+  grid-column: 4/7;
+  background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQr-mavbCJCAaXqhwDXASfDYVw9Y-zfpUqcQ&s");
+  background-size:contain;
+}
+
+.portfolio__projects--item p{
+  font-size:3rem;
+  font-weight:400;
+  letter-spacing:0.1rem;
+  z-index:2;
+  color:yellow;
 }

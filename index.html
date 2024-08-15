@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="index.js"></script>
 </head>
 <body>
@@ -28,7 +29,7 @@
             
         <div id="book-container">
             <div class="instructions">
-                <p>Click on the front page to see what's inside</p>
+                <p id="instrctions__description">Click on the front page to see what's inside</p>
             </div>
             <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
             <section id="homePage" class="home page">
@@ -37,8 +38,14 @@
                     <div class="home__content--name">
                         <h2>Hello, I'm Lakshmi!</h2>
                     </div>
-                    <p class="home__content--role">Full Stack Developer</p>
+                    <!-- <p class="home__content--role">Full Stack Developer</p> -->
                     <p class="home__content--description">I transform beautiful designs into dynamic code and bringing your vision to life with precision. Crafting concepts into vibrant realities through expert craftsmanship.</p>
+                    <div class="home__content--socials">
+                        <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram social-icon"></i></a>
+                        <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in social-icon"></i></a>
+                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github social-icon"></i></a>
+                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf social-icon"></i></a>
+                    </div>
                   </div>
                   <div class="navButtons">
                     <button id="to-coverPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
@@ -55,6 +62,18 @@
             </section>
             <section id="portfolioPage" class="portfolio page">
                 <h1>Portfolio</h1>
+                <div class="portfolio__projects">
+                    <div class="portfolio__projects--item project-1">
+                        <p>Rapid Munch</p>
+                    </div>
+                    <div class="portfolio__projects--item project-2">
+                        <p>TReact</p>
+                    </div>
+                    <div class="portfolio__projects--item project-3"></div>
+                    <div class="portfolio__projects--item project-4">
+                        <p>NetflixGPT</p>
+                    </div>
+                </div>
                 <div class="navButtons">
                     <button id="to-aboutPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
                     <button id="from-portfolioPage" class="nextBtn" onClick="onClick(event)"> Next </button>

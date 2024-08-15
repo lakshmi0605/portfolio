@@ -6,6 +6,7 @@ function onClick(event){
         const prevPageEle = document.getElementById(pageId);
         const prevPageName = pageId.split("Page")[0];
         prevPageEle.classList.toggle(prevPageName+"Click");
+        if(prevPageName === "cover") displayInstructions('inline')
     }else if(direction === "from"){
         const currPageEle = document.getElementById(pageId);
         const currPageName = pageId.split("Page")[0];
@@ -17,6 +18,12 @@ function onCoverClick(event){
     const coverId = event.target.id;
     const coverEle = document.getElementById(coverId);
     coverEle.classList.add("coverClick");
+    displayInstructions('none');
+}
+
+function displayInstructions(displayString){
+    const instructionsEle = document.getElementById("instrctions__description");
+    instructionsEle.style.display = displayString;
 }
 
 function onContactSubmit(event){
