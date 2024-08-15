@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="main">
+        
         <!-- <div id="index-container">
             <nav class="index">
                 <div class="empty"></div>
@@ -23,8 +24,12 @@
             </div>
             </nav>
         </div> -->
+        <div class="mainContent">
+            
         <div id="book-container">
-           
+            <div class="instructions">
+                <p>Click on the front page to see what's inside</p>
+            </div>
             <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
             <section id="homePage" class="home page">
                 <div class="content">
@@ -57,12 +62,21 @@
             </section>
             <section id="contactPage" class="contact page">
                 <h1>Contact</h1>
+                <form class="contactForm" onsubmit="onContactSubmit(event)">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" value="" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="email"value="" required>
+                     <label for="message">Message</label>
+                    <textarea id="message" rows="3" value="" required> </textarea>
+                    <button class="contact-btn" type="submit">Submit</button>
+                </form>
                 <div class="navButtons">
                     <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
                     <button id="from-contactPage" class="nextBtn" onClick="onClick(event)"> Next </button>
                   </div>
             </section>
-            <section id="endPage" class="end back-cover">
+            <section id="endPage" class="page back-cover">
                 <h1>THE END</h1>
                     <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
             </section>
@@ -113,6 +127,7 @@
                     
                 </div>
             </div>
+        </div>
                 
     </div>
 </body>

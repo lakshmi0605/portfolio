@@ -1,7 +1,7 @@
 *{
     margin:0;
     padding:0;
-    border-sizing:border-box;
+    box-sizing:border-box;
     /* border:1px solid pink; */
 }
 
@@ -12,13 +12,27 @@
     --text-secondary-color:white;
 }
 
+body{
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFC3nQWcQ_Ak5ALgjhup-P6SMZDuNw2Jic5g&s")
+}
+
 .main{
     position:relative;
     display:flex;
-    justify-content:space-between;
     height:100vh;
     width:100vw;
 }
+
+.mainContent{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.instructions{
+  text-align:center;
+}
+
 
 #index-container{
     position:relative;
@@ -59,34 +73,15 @@
 
 #book-container{
    position:relative;
-   width:100%;
+   height:70%;
    margin:10rem 15rem 5rem 15rem ;
    border-radius:10px;
    perspective:1500px;
    transform:rotateX(20deg);
 }
 
-.cover{
+.cover, .home, .about, .portfolio, .contact, .back-cover{
     transform:rotateX(20deg);
-}
-
-.home{
-    transform:rotateX(20deg)
-}
-
-.about{
-    transform:rotateX(20deg);
-}
-
-.portfolio{
-    transform:rotateX(20deg)
-}
-
-.contact{
-    transform:rotateX(20deg)
-}
-.end{
-    transform:rotateX(20deg) 
 }
 
 .spiral-container {
@@ -94,8 +89,8 @@
     perspective:1000px;
     width: 10%; /* Adjust as needed */
     height: 100%; /* Adjust as needed */
-    left:-1.5rem;
-    top:-1%;
+    left:-1rem;
+    top:1%;
     bottom:5%;
     transform:rotateX(20deg);
     z-index:1000;
@@ -119,11 +114,11 @@
   .circle {
     width: 42px; /* Ring diameter */
     height: 42px;
-    border:5px solid #F3E5AB;
+    border:5px solid gray;
     border-radius: 50%;
     position: absolute;
     transform-style: preserve-3d; /* Ensures 3D transforms are preserved */
-    transform: rotateX(30deg) rotateZ(120deg) rotateY(-90deg) ;
+    transform: rotateX(-80deg) rotateZ(-90deg) rotateY(100deg) ;
   }
 
   .ring-innerPage{
@@ -132,10 +127,8 @@
 
   section{
     border-radius:20px;
-    /* box-shadow:15px 15px 5px gold; */
+    /* box-shadow:1px 2px 5px 10px black; */
   }
-
-
 
   .cover,  .back-cover{
     height:100%;
@@ -143,7 +136,7 @@
   }
 
   .cover{
-    background:url(/home-bkg.jpg);
+    background:url("/home-bkg.jpg");
     object-fit:cover;
     filter: grayscale(100%);
     cursor:pointer;
@@ -163,61 +156,12 @@
     transform: rotateX(20deg) rotateY(-240deg);
   }
 
-/* 
-  .coverBottom{
-    z-index:-1;
-  }
-  .homeBottom{
-    z-index:1;
-  }
-
-  .aboutBottom{
-    z-index:2;
-  }
-  .portfolioBottom{
-    z-index:3;
-  }
-
-  .contactBottom{
-    z-index:4;
-  } */
-/*   
-  .coverClick{
-    z-index:-1;
-  }
-
-  .homeClick{
-    z-index:1;
-  }
-
-  .aboutClick{
-    z-index:2;
-  }
-  .portfolioClick{
-    z-index:3;
-  }
-
-  .contactClick{
-    z-index:4;
-  } */
-
-  
-  /* #book-container:hover .cover{
-    
-  } */
-
-  /* #book-container:hover .page{
-    transform:  rotateY(-180deg);
-  } */
-
-
   .page{
     transform-origin:center left;
     transition:all 4s;
-    /* backface-visibility:hidden; */
+    background-color:black;
+    color:white;
   }
-
-
 
 .overlay {
     position: absolute;
@@ -229,7 +173,6 @@
     pointer-events: none; 
     border-radius:20px;
   }
-
 
 .content {
     height:100%;
@@ -276,7 +219,7 @@
   }
 
   .navButtons{
-    margin-bottom:2rem;
+    margin-bottom:3rem;
     display:flex;
     justify-content:space-between;
     width:30%;
@@ -292,6 +235,18 @@
     box-shadow:2px 2px 5px 1px white;
   }
 
+  .about{
+    z-index:3
+  }
+
+  .portfolio{
+    z-index:2;
+  }
+
+  .contact{
+    z-index:1;
+  }
+
    .about, .portfolio, .contact, .back-cover{
     position:absolute;
     height:100%;
@@ -300,20 +255,55 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    gap:3rem;
   }
 
-  .about{
-    background-color:green;
-    z-index:3
-  }
-
-  .portfolio{
-    background-color:pink;
-    z-index:2;
+  .back-cover{
+    justify-content:space-evenly;  
   }
 
   .contact{
-    background-color:orange;
-    z-index:1;
+    padding-top:2rem;
+    gap:1.5rem;
   }
+
+  .contactForm{
+    width:75%;
+    border:2px solid white;
+    border-radius:20px;
+    padding:1rem 2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.3rem;
+  }
+  
+.contactForm label{
+  font-size:1.2rem;
+}
+
+
+.contactForm input, .contactForm textarea{
+  width:100%;
+  padding: 10px 5px;
+  border-radius:10px;
+  background-color:#edf6f9;
+  text-align:center;
+}
+
+.contactForm textarea{
+  line-height:1rem;
+}
+
+.contact-btn{
+  padding:10px;
+  border-radius:20px;
+  background-color:transparent;
+  color:white;
+  margin-top:0.5rem;
+  box-shadow:1px 1px 15px 4px yellow;
+}
+
+.back-cover h1{
+  margin-bottom:15%;
+  margin-top:25%;
+}
