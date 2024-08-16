@@ -41,3 +41,20 @@ function onContactSubmit(event){
     // Optionally, you can display a confirmation message to the user
     alert('Form submitted! Check the console for details.');
 }
+
+
+function onProjectClick(event){
+    const projEle = event.target.closest(".portfolio__projects--item");
+    const projEleId = projEle.id;
+    const projCard = document.getElementById(projEleId+"--card");
+    projCard.classList.add('projectClicked');
+}
+
+function onCardClose(event){
+    event.stopPropagation();
+    const projEle = event.target.closest(".portfolio__projects--item");
+    const projEleId = projEle.id;
+    const projCard = document.getElementById(projEleId+"--card");
+    projCard.classList.remove('projectClicked');
+}
+

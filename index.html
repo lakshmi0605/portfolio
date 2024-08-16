@@ -26,128 +26,197 @@
             </nav>
         </div> -->
         <div class="mainContent">
-            
-        <div id="book-container">
-            <div class="instructions">
-                <p id="instrctions__description">Click on the front page to see what's inside</p>
-            </div>
-            <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
-            <section id="homePage" class="home page">
-                <div class="content">
-                    <p class="home__content--welcome">WELCOME TO MY PORTFOLIO</p>
-                    <div class="home__content--name">
-                        <h2>Hello, I'm Lakshmi!</h2>
-                    </div>
-                    <!-- <p class="home__content--role">Full Stack Developer</p> -->
-                    <p class="home__content--description">I transform beautiful designs into dynamic code and bringing your vision to life with precision. Crafting concepts into vibrant realities through expert craftsmanship.</p>
-                    <div class="home__content--socials">
-                        <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram social-icon"></i></a>
-                        <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in social-icon"></i></a>
-                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github social-icon"></i></a>
-                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf social-icon"></i></a>
-                    </div>
-                  </div>
-                  <div class="navButtons">
-                    <button id="to-coverPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                    <button id="from-homePage" class="nextBtn" onClick="onClick(event)"> Next </button>
-                  </div>
-                 
-            </section>
-            <section id="aboutPage" class="about page">
-                <h1>About</h1>
-                <div class="navButtons">
-                    <button id="to-homePage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                    <button id="from-aboutPage" class="nextBtn" onClick="onClick(event)"> Next </button>
-                  </div>
-            </section>
-            <section id="portfolioPage" class="portfolio page">
-                <h1>Portfolio</h1>
-                <div class="portfolio__projects">
-                    <div class="portfolio__projects--item project-1">
-                        <p>Rapid Munch</p>
-                    </div>
-                    <div class="portfolio__projects--item project-2">
-                        <p>TReact</p>
-                    </div>
-                    <div class="portfolio__projects--item project-3"></div>
-                    <div class="portfolio__projects--item project-4">
-                        <p>NetflixGPT</p>
-                    </div>
+            <div id="book-container">
+                <div class="instructions">
+                    <p id="instrctions__description">Click on the front page to see what's inside</p>
                 </div>
-                <div class="navButtons">
-                    <button id="to-aboutPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                    <button id="from-portfolioPage" class="nextBtn" onClick="onClick(event)"> Next </button>
-                  </div>
-            </section>
-            <section id="contactPage" class="contact page">
-                <h1>Contact</h1>
-                <form class="contactForm" onsubmit="onContactSubmit(event)">
-                    <label for="name">Name</label>
-                    <input id="name" type="text" value="" required>
-                    <label for="email">Email</label>
-                    <input id="email" type="email"value="" required>
-                     <label for="message">Message</label>
-                    <textarea id="message" rows="3" value="" required> </textarea>
-                    <button class="contact-btn" type="submit">Submit</button>
-                </form>
-                <div class="navButtons">
-                    <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                    <button id="from-contactPage" class="nextBtn" onClick="onClick(event)"> Next </button>
-                  </div>
-            </section>
-            <section id="endPage" class="page back-cover">
-                <h1>THE END</h1>
-                    <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-            </section>
-             <div class="spiral-container">
-                <div class="rings">
-                    <div class="circleContainer">
-                        <div class="circle "></div>
+                <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
+                <section id="homePage" class="home page">
+                    <div class="content">
+                        <p class="home__content--welcome">WELCOME TO MY PORTFOLIO</p>
+                        <div class="home__content--name">
+                            <h2>Hello, I'm Lakshmi!</h2>
+                        </div>
+                        <!-- <p class="home__content--role">Full Stack Developer</p> -->
+                        <p class="description home__content--description">I transform beautiful designs into dynamic code and bringing your vision to life with precision. Crafting concepts into vibrant realities through expert craftsmanship.</p>
+                        <div class="home__content--socials">
+                            <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram social-icon"></i></a>
+                            <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in social-icon"></i></a>
+                            <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github social-icon"></i></a>
+                            <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf social-icon"></i></a>
+                        </div>
                     </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
-                    </div>
-                    <div class="circleContainer">
-                        <div class="circle "></div>
+                    <div class="navButtons">
+                        <button id="to-coverPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                        <button id="from-homePage" class="nextBtn" onClick="onClick(event)"> Next </button>
                     </div>
                     
-                </div>
+                </section>
+                <section id="aboutPage" class="about page">
+                    <h1>About</h1>
+                    <div class="navButtons">
+                        <button id="to-homePage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                        <button id="from-aboutPage" class="nextBtn" onClick="onClick(event)"> Next </button>
+                    </div>
+                </section>
+                <section id="portfolioPage" class="portfolio page">
+                    <h2>Portfolio</h2>
+                    <div class="portfolio__projects">
+                        <div id="project1" class="portfolio__projects--item project1" onClick="onProjectClick(event)">
+                            <p class="project-heading">Rapid Munch</p>
+                            <div id="project1--card" class="projectCard">
+                                    <div class="project__content--description">
+                                        <button class="close-btn" onClick="onCardClose(event)">Close</button>
+                                        <h2>Rapid Munch</h2>
+                                        <p >A real-time scalable food delivery web application with a list of restaurants and their dynamic menus.</p>
+                                        <div class="project__content--techstack">
+                                            <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                            <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in "></i></a>
+                                            <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                                            <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                        </div>
+                                        <div class="project__content--links">
+                                            <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github "></i></a>
+                                            <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div id="project2" class="portfolio__projects--item project2" onClick="onProjectClick(event)">
+                            <p class="project-heading">TReact</p>
+                            <div id="project2--card" class="projectCard" >
+                                <div class="project__content--description">
+                                    <button class="close-btn" onClick="onCardClose(event)">Close</button>
+                                    <h2>TReact</h2>
+                                    <p >A real-time scalable food delivery web application with a list of restaurants and their dynamic menus.</p>
+                                    <div class="project__content--techstack">
+                                        <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in "></i></a>
+                                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                    </div>
+                                    <div class="project__content--links">
+                                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github "></i></a>
+                                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                        <div id="project3" class="portfolio__projects--item project3"></div>
+                        <div id="project4" class="portfolio__projects--item project4" onClick="onProjectClick(event)">
+                            <p class="project-heading">NetflixGPT</p>
+                            <div id="project4--card" class="projectCard">
+                                <div class="project__content--description">
+                                    <button class="close-btn" onClick="onCardClose(event)">Close</button>
+                                    <h2>NetflixGPT</h2>
+                                    <p >A real-time scalable food delivery web application with a list of restaurants and their dynamic menus.</p>
+                                    <div class="project__content--techstack">
+                                        <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in "></i></a>
+                                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                    </div>
+                                    <div class="project__content--links">
+                                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github "></i></a>
+                                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="navButtons">
+                        <button id="to-aboutPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                        <button id="from-portfolioPage" class="nextBtn" onClick="onClick(event)"> Next </button>
+                    </div>
+                </section>
+                <section id="contactPage" class="contact page">
+                    <h1>Contact</h1>
+                    <form class="contactForm" onsubmit="onContactSubmit(event)">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" value="" required>
+                        <label for="email">Email</label>
+                        <input id="email" type="email"value="" required>
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="3" value="" required> </textarea>
+                        <button class="contact-btn" type="submit">Submit</button>
+                    </form>
+                    <div class="navButtons">
+                        <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                        <button id="from-contactPage" class="nextBtn" onClick="onClick(event)"> Next </button>
+                    </div>
+                </section>
+                <section id="endPage" class="page back-cover">
+                    <h1>THE END</h1>
+                        <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                </section>
+                <div class="spiral-container">
+                    <div class="rings">
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        <div class="circleContainer">
+                            <div class="circle "></div>
+                        </div>
+                        
+                    </div>
+                </div> 
             </div>
         </div>
-                
+        <!-- <div class="projectCards">
+            <div id="projectCard-1" class="projectCard project1 projectClicked" onClick="onCardClick()">
+                <div class="project__content--description">
+                    <button class="close-btn">Close</button>
+                    <h2>Rapid Munch</h2>
+                    <p class="description">A real-time scalable food delivery web application with a list of restaurants and their dynamic menus.</p>
+                    <div class="project__content--techstack">
+                        <a href="https://www.instagram.com/lpanguluri/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/lakshmi-panguluri" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in "></i></a>
+                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                    </div>
+                    <div class="project__content--links">
+                        <a href="https://github.com/lakshmi0605" target="_blank" title="GitHub"><i class="fa-brands fa-github "></i></a>
+                        <a href="https://drive.google.com/file/d/1meEWiKpLUALddh8-o-bniymVv85Lvxev/view?usp=drive_link" target="_blank" download="Lakshmi Panguluri - Resume.pdf" title="Resume"><i class="fa-regular fa-file-pdf "></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>  -->
     </div>
 </body>
 </html>
