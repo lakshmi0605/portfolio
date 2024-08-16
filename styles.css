@@ -21,6 +21,7 @@ body{
   line-height:1.5rem;
   letter-spacing:0.08rem;
 }
+
 .main{
   position:relative;
     display:flex;
@@ -31,14 +32,22 @@ body{
 .mainContent{
   position:relative;
   width:100%;
+  height:100%;
   display:flex;
   flex-direction:column;
+  justify-content:center;
 }
 
 .instructions{
   text-align:center;
 }
 
+.instructions__description{
+  font-size:1rem;
+  letter-spacing:0.1rem;
+  visibility:visible;
+  line-height:1.5rem;
+}
 
 #index-container{
     position:relative;
@@ -80,7 +89,7 @@ body{
 #book-container{
    position:relative;
    height:70%;
-   margin:10rem 15rem 5rem 15rem ;
+   margin:0rem 15rem ;
    border-radius:10px;
    perspective:1500px;
    transform:rotateX(20deg);
@@ -96,9 +105,9 @@ body{
     width: 10%; /* Adjust as needed */
     height: 100%; /* Adjust as needed */
     left:-1rem;
-    top:1%;
-    bottom:5%;
+
     transform:rotateX(20deg);
+    transition:all 3s;
     z-index:10;
   }
 
@@ -143,7 +152,7 @@ body{
 
   .cover{
     background:url("/home-bkg.jpg");
-    object-fit:cover;
+    background-size:cover;
     filter: grayscale(100%);
     cursor:pointer;
     transform-origin:center left;
@@ -155,7 +164,6 @@ body{
   .back-cover{
     position:relative;
     z-index: -1;
-    background-color:gray;
   }
 
   .coverClick, .homeClick, .aboutClick, .portfolioClick, .contactClick{
@@ -200,7 +208,8 @@ body{
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
+    justify-content:space-evenly;
+    padding:2rem 0;
     z-index:4;
   }
 
@@ -264,9 +273,8 @@ body{
   }
 
   .navButtons{
-    margin-bottom:1rem;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     width:30%;
     padding:5px;
   }
@@ -283,8 +291,9 @@ body{
 
 
   .about{
-    z-index:3
+    z-index:3;
   }
+  
 
   .portfolio{
     z-index:2;
@@ -300,13 +309,15 @@ body{
     width:100%;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:space-evenly;
     align-items:center;
     gap:1rem;
+    padding:2rem 0;
   }
 
   .back-cover{
     justify-content:space-evenly;  
+    padding:1.5rem 0;
   }
 
   .contact{
@@ -486,12 +497,62 @@ body{
   border:none;
   color:var(--text-secondary-color);
   cursor:pointer;
+  text-shadow:1px 1px 10px 5px white;
 }
 
 .close-btn:hover{
   transform:scale(1.1);
-  transition:all 1s ease;
+  transition:all 0.1s ease;
   color:var(--button-hover-color);
 }
 
+.about__content{
+  width:75%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid var(--secondary-color);
+  border-radius:20px;
+}
+
+.about__content--education, .about__content--work{
+  padding: 2rem;
+  gap:1rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.about__content--work{
+  width:50%;
+}
+
+.separator{
+  height:80%;
+  border:1px solid white;
+}
+.education--masters, .education--bachelors, .work--nau, .work--infy{
+  display:flex;
+  gap:1.2rem;
+}
+
+.education--contentContainer p{
+  letter-spacing:0.05rem;
+  line-height:1.5rem;
+}
+
+.work--contentContainer{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+
+.work--content p{
+  letter-spacing:0.05rem;
+  line-height:1.3rem;
+}
+
+.work--imageContainer img{
+  background-color:black;
+}
 
