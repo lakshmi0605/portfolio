@@ -6,10 +6,11 @@
 }
 
 :root{
-    --primary-color:black;
-    --secondary-color:#C0C0C0;
-    --text-primary-color:black;
-    --text-secondary-color:white;
+    --primary-color:#0b090a;
+    --secondary-color:#FFFFFF;
+    --text-primary-color:#0b090a;
+    --text-secondary-color:#FFFFFF;
+    --button-hover-color:#ffb700;
 }
 
 body{
@@ -42,13 +43,13 @@ body{
 #index-container{
     position:relative;
     width:20%;
-    border:1px solid black;
-    background-color:white;
+    border:1px solid var(--primary-color);
+    background-color:var(--secondary-color);
 }
 
 .index{
     position:absolute;
-    background-color:black;
+    background-color:var(--primary-color);
     border-radius:25%;
     width:200%;
     height:100%;
@@ -61,7 +62,7 @@ body{
 
 .index__listContainer{
     width:50%;
-    color:white;
+    color:var(--text-secondary-color);
    
     
 }
@@ -132,7 +133,7 @@ body{
 
   section{
     border-radius:20px;
-    /* box-shadow:1px 2px 5px 10px black; */
+    /* box-shadow:1px 2px 5px 10px var(--primary-color); */
   }
 
   .cover,  .back-cover{
@@ -164,8 +165,8 @@ body{
   .page{
     transform-origin:center left;
     transition:all 4s;
-    background-color:black;
-    color:white;
+    background-color:var(--primary-color);
+    color:var(--text-secondary-color);
   }
 
 .overlay {
@@ -193,7 +194,7 @@ body{
 
   .home{
     position:absolute;
-    background-color:black;
+    background-color:var(--primary-color);
     height:100%;
     width:100%;
     display:flex;
@@ -227,7 +228,7 @@ body{
   }
 
   .home__content--socials a{
-    border:2px solid beige;
+    border:2px solid var(--secondary-color);
     border-radius: 10px;
     padding:5px;
     transition: all 1s ease;
@@ -237,17 +238,29 @@ body{
     background: linear-gradient(to right bottom, #ffea00,#ffaa00, #ff7b00);
     border: 1px solid #e4e4e4;
     transform: scale(1.1);
-    color:black;
-    /* box-shadow: 1px 1px 25px 2px white,2px 2px 25px 3px #f0f0f0; */
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), /* Soft white glow */
-    1px 1px 12px rgba(255, 255, 200, 0.4), /* Slight yellow glow */
-    2px 2px 16px rgba(255, 255, 255, 0.2); /* Larger white outer glow */
+    color:var(--text-primary-color);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 
+    1px 1px 12px rgba(255, 255, 200, 0.4), 
+    2px 2px 16px rgba(255, 255, 255, 0.2); 
   }
 
 
   .social-icon{
     font-size:25px;
-    color:white;
+    color:var(--text-secondary-color);
+  }
+
+  .icon{
+    font-size:20px;
+    color:var(--text-secondary-color);
+    fill:var(--secondary-color);
+  }
+
+  .icon:hover{
+    color:var(--button-hover-color);
+    fill:var(--button-hover-color);
+    transform:scale(1.1);
+    transition:all 1s ease;
   }
 
   .navButtons{
@@ -260,11 +273,11 @@ body{
 
   .prevBtn, .nextBtn{
     background-color:transparent;
-    color:white;
+    color:var(--text-secondary-color);
     padding:15px;
     letter-spacing:0.1rem;
     border-radius:50%;
-    border:1px solid white;
+    border:1px solid var(--secondary-color);
     box-shadow:0px 1px 15px 2px rgb(255,255,255,0.5);
   }
 
@@ -303,7 +316,7 @@ body{
 
   .contactForm{
     width:75%;
-    border:2px solid white;
+    border:2px solid var(--secondary-color);
     border-radius:20px;
     padding:1rem 2rem;
     display:flex;
@@ -335,10 +348,10 @@ body{
   letter-spacing:0.1rem;
   font-weight:500;
   background-color:transparent;
-  color:white;
+  color:var(--text-secondary-color);
   margin-top:1rem;
   border:1px solid #FFDD00;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), /* Soft white glow */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 
     2px 2px 12px 2px rgba(255, 149, 0, 0.4);
 }
 
@@ -349,7 +362,7 @@ body{
 
 .portfolio__projects{
   width:85%;
-  border:1px solid white;
+  border:1px solid var(--secondary-color);
   display:grid;
   gap:10px;
   border-radius:20px;
@@ -359,7 +372,7 @@ body{
 
 .portfolio__projects--item{
   position:relative;
-  border:1px solid white;
+  border:1px solid var(--secondary-color);
   border-radius:15px;
   filter:grayscale(100%);
   cursor:pointer;
@@ -432,11 +445,11 @@ body{
   filter:none;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  background: black;
+  background: var(--primary-color);
   backdrop-filter: blur(100px);
   width:25rem;
   border-radius:15px;
-  color:white;
+  color:var(--text-secondary-color);
   perspective:1500px;
   padding:1rem 0;
   z-index:50;
@@ -455,7 +468,7 @@ body{
 
 .project__content--techstack, .project__content--links{
   display:flex;
-  gap:1rem;
+  gap:0.5rem;
 }
 
 
@@ -471,7 +484,14 @@ body{
   right:1rem;
   background-color:transparent;
   border:none;
-  color:white;
+  color:var(--text-secondary-color);
+  cursor:pointer;
+}
+
+.close-btn:hover{
+  transform:scale(1.1);
+  transition:all 1s ease;
+  color:var(--button-hover-color);
 }
 
 
