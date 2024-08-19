@@ -38,17 +38,16 @@ function onContactSubmit(event){
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    // Log the input values to the console
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Message:', message);
 
-    // Optionally, you can display a confirmation message to the user
     alert('Form submitted! Check the console for details.');
 }
 
 
 function onProjectClick(event){
+    closeOpenProjects();
     const projEle = event.target.closest(".portfolio__projects--item");
     const projEleId = projEle.id;
     const projCard = document.getElementById(projEleId+"--card");
@@ -63,3 +62,10 @@ function onCardClose(event){
     projCard.classList.remove('projectClicked');
 }
 
+function closeOpenProjects(){
+    const openProjEle = document.querySelectorAll(".projectClicked");
+    for(let i=0;i<openProjEle.length;i++){
+        const ele = document.getElementById(openProjEle[i].id);
+        ele.classList.remove('projectClicked');
+    }
+}
