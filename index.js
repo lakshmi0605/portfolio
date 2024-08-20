@@ -1,5 +1,7 @@
 function onClick(event){
-    const eleId = event.target.id;
+    let eleId ="";
+    if(event.target) eleId = event.target.id; //on button click
+    else eleId = event.id;                    //on clicking right/left half
     const [direction, pageId ] = eleId.split("-");
 
     if(direction === "to"){
@@ -68,4 +70,23 @@ function closeOpenProjects(){
         const ele = document.getElementById(openProjEle[i].id);
         ele.classList.remove('projectClicked');
     }
+}
+
+function onLeftClick(event){
+    const prevBtn = getBtnClick(event,"left");
+    onClick(prevBtn);
+}
+
+function onRightClick(event){
+    const nextBtn = getBtnClick(event,"right");
+    onClick(nextBtn);
+}
+
+function getBtnClick(event, direction){
+    let btnClass = "";
+    if(direction === "left") btnClass = 'prevBtn'
+    else btnClass = 'nextBtn'
+    const parentElement = event.target.parentElement;
+    const targetChild = Array.from(parentElement.children).find(child => child.classList.contains('navButtons'));
+    return Array.from(targetChild.children).find(child => child.classList.contains(btnClass));
 }

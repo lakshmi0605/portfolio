@@ -9,6 +9,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="index.js"></script>
 </head>
 <body>
@@ -33,9 +36,10 @@
                 <p class="instructions__description">Click the front page to unveil the details!!</p>
             </div>
             <div id="book-container">
-                
                 <section id="coverPage" class="cover" onclick="onCoverClick(event)"></section>
                 <section id="homePage" class="home page">
+                    <div class="half left-half" onclick="onLeftClick(event)"></div>
+                    <div class="half right-half" onclick="onRightClick(event)"></div>
                     <div class="content">
                         <p class="home__content--welcome">WELCOME TO MY PORTFOLIO</p>
                         <div class="home__content--name">
@@ -57,6 +61,8 @@
                     
                 </section>
                 <section id="aboutPage" class="about page">
+                    <div class="half left-half" onclick="onLeftClick(event)"></div>
+                    <div class="half right-half" onclick="onRightClick(event)"></div>
                     <h1>My Journey</h1>
                     <div class="about__content">
                         <div class="about__content--education">
@@ -121,11 +127,14 @@
                     </div>
                 </section>
                 <section id="portfolioPage" class="portfolio page">
+                    <div class="half left-half" onclick="onLeftClick(event)"></div>
+                    <div class="half right-half" onclick="onRightClick(event)"></div>
                     <h2>Portfolio</h2>
                     <div class="portfolio__projects">
                         <div id="project1" class="portfolio__projects--item project1" onClick="onProjectClick(event)">
                             <p class="project-heading">Rapid Munch</p>
                             <div id="project1--card" class="projectCard">
+                                <div class="overlay-card">
                                     <div class="project__content--description">
                                         <button class="close-btn" onClick="onCardClose(event)">Close</button>
                                         <h2>Rapid Munch</h2>
@@ -146,15 +155,17 @@
                                             <a href="https://rapidmunch.netlify.app/" target="_blank"><i class="fa-solid fa-link icon"></i></i></a>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                         <div id="project2" class="portfolio__projects--item project2" onClick="onProjectClick(event)">
                             <p class="project-heading">TReact</p>
                             <div id="project2--card" class="projectCard" >
+                                <div class="overlay-card">
                                 <div class="project__content--description">
                                     <button class="close-btn" onClick="onCardClose(event)">Close</button>
                                     <h2>TReact</h2>
-                                    <p >A real-time scalable food delivery web application with a list of restaurants and their dynamic menus.</p>
+                                    <p >A SASS application to enhance React applications, providing a robust and scalable approach to managing styles with variables, mixins, and nested rules.</p>
                                     <div class="project__content--techstack">
                                         <i class="fa-brands fa-html5 icon"></i>
                                         <i class="fa-brands fa-css3-alt icon"></i>
@@ -165,12 +176,14 @@
                                         <a href="https://lakshmi0605.github.io/treact/" target="_blank"><i class="fa-solid fa-link icon"></i></i></a>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         </div>
                         <div id="project3" class="portfolio__projects--item project3"></div>
                         <div id="project4" class="portfolio__projects--item project4" onClick="onProjectClick(event)">
                             <p class="project-heading">NetflixGPT</p>
                             <div id="project4--card" class="projectCard">
+                                <div class="overlay-card">
                                 <div class="project__content--description">
                                     <button class="close-btn" onClick="onCardClose(event)">Close</button>
                                     <h2>NetflixGPT</h2>
@@ -191,6 +204,7 @@
                                         <a href="https://dazzling-gnome-5ed7ce.netlify.app/" target="_blank"><i class="fa-solid fa-link icon"></i></i></a>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -200,8 +214,9 @@
                     </div>
                 </section>
                 <section id="contactPage" class="contact page">
+                    <div class="full" onclick="onLeftClick(event)"></div>
                     <h1>Get In Touch!!</h1>
-                    <form class="contactForm" onsubmit="onContactSubmit(event)">
+                    <form class="contactForm" onsubmit="onContactSubmit(event)" >
                         <label for="name">Name</label>
                         <input id="name" type="text" value="" required>
                         <label for="email">Email</label>
@@ -212,13 +227,17 @@
                     </form>
                     <div class="navButtons">
                         <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                        <button id="from-contactPage" class="nextBtn" onClick="onClick(event)"> Next </button>
+                        
                     </div>
                 </section>
-                <section id="endPage" class="page back-cover">
+                <!-- <section id="endPage" class="page back-cover">
+                    <div class="full" onclick="onLeftClick(event)"></div>
                     <h1>THE END</h1>
-                    <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
-                </section>
+                    <div class="navButtons">
+                        <button id="to-contactPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
+                    </div>
+                    
+                </section> -->
                 <!-- <div class="spiral-container">
                     <div class="rings">
                         <div class="circleContainer">
