@@ -3,7 +3,7 @@
     padding:0;
     box-sizing:border-box;
     font-family: 'Chakra Petch', sans-serif;
-    letter-spacing:0.3rem;
+    /* letter-spacing:0.3rem; */ //removed it as it is effecting social icons
     /* border:1px solid pink; */
 }
 
@@ -17,6 +17,11 @@
 
 body{
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFC3nQWcQ_Ak5ALgjhup-P6SMZDuNw2Jic5g&s")
+}
+
+h1{
+  letter-spacing:0.5rem;
+  text-align:center;
 }
 
 .description{
@@ -145,6 +150,7 @@ body{
 
   section{
     border-radius:20px;
+    border-left:2px solid gray;
     /* box-shadow:1px 2px 5px 10px var(--primary-color); */
   }
 
@@ -154,13 +160,13 @@ body{
   }
 
   .cover{
-    background:url("Lakshmi Panguluri.png");
+    background:url("Cover.png");
     background-size:cover;
     background-position:center;
     filter: grayscale(100%);
     cursor:pointer;
     transform-origin:center left;
-    transition:all 3s;
+    transition:all 1s;
     position:absolute;
     z-index:5;
   }
@@ -171,12 +177,12 @@ body{
   }
 
   .coverClick, .homeClick, .aboutClick, .portfolioClick, .contactClick{
-    transform: rotateX(20deg) rotateY(-240deg);
+    transform: rotateX(20deg) rotateY(-210deg);
   }
 
   .page{
     transform-origin:center left;
-    transition:all 4s;
+    transition:all 1s;
     background-color:var(--primary-color);
     color:var(--text-secondary-color);
   }
@@ -193,7 +199,6 @@ body{
   }
 
 .content {
-    height:100%;
     color: #fff; 
     text-align: center; 
     display:flex;
@@ -213,7 +218,7 @@ body{
     flex-direction:column;
     align-items:center;
     justify-content:space-evenly;
-    padding:2rem 0;
+    gap:1rem;
     z-index:4;
   }
 
@@ -292,7 +297,15 @@ body{
     letter-spacing:0.1rem;
     border-radius:20px;
     border:1px solid var(--secondary-color);
-    box-shadow:0px 1px 15px 2px rgb(255,255,255,0.5);
+    transition:all 1s ease-in-out;
+    z-index:1;
+  }
+
+  .prevBtn:hover, .nextBtn:hover{
+    border:1px solid rgb(255, 208, 0);
+    box-shadow:0px 1px 15px 1px rgb(255, 221, 0, 0.4), 1px 1px 15px 1px rgb(255, 208, 0, 0.4),2px 2px 15px 1px rgb(255, 149, 0, 0.4);
+    transform:scale(1.05);
+    transition:all 1s ease;
   }
 
 
@@ -309,7 +322,7 @@ body{
     z-index:1;
   }
 
-   .about, .portfolio, .contact, .back-cover{
+   .home, .about, .portfolio, .contact, .back-cover{
     position:absolute;
     height:100%;
     width:100%;
@@ -345,6 +358,7 @@ body{
   
 .contactForm label{
   font-size:1.2rem;
+  letter-spacing:0.2rem;
 }
 
 
@@ -464,7 +478,7 @@ body{
 
 .overlay-card{
   background-color:transparent;
-  backdrop-filter:blur(30px);
+  backdrop-filter:blur(10px);
   border-radius:15px;
 }
 .project-heading{
@@ -487,7 +501,7 @@ body{
   filter:none;
   background-color:rgb(248, 249, 250,0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 221, 0, 0.7);
+  /* border: 1px solid rgba(255, 221, 0, 0.7); */
   background: var(--primary-color);
   backdrop-filter: blur(100px);
   width:25rem;
@@ -497,7 +511,10 @@ body{
   z-index:50;
   visibility:hidden;
   transform-style:preserve-3d;
-  box-shadow: 0 0 10px 1px #ffea00, 1px -1px 10px 1px #ffd000, 2px -2px 10px 1px #ffc300, 3px 3px 20px 1px #ffaa00, 2px -2px 40px 1px #ff8800;
+  border:1px solid rgb(255, 208, 0);
+  box-shadow:0px 1px 15px 1px rgb(255, 221, 0, 0.4), 1px 1px 15px 1px rgb(255, 208, 0, 0.4),2px 2px 15px 1px rgb(255, 149, 0, 0.4);
+  transform: rotateX(10deg) scale(0);
+  transition:all 1s ease;
 }
 
 .project__content--description{
@@ -517,7 +534,11 @@ body{
 .projectClicked{
   visibility:visible;
   transform: rotateX(10deg) scale(1.2);
-  transition:all 3s ease;
+  transition:all 1s ease;
+}
+
+.projectClicked:focus{
+  border:10px solid pink;
 }
 
 .close-btn{
@@ -582,7 +603,9 @@ body{
   letter-spacing:0.05rem;
   line-height:1.3rem;
 }
-
+.work--content-small{
+  display:none;
+}
 .work--imageContainer img{
   background-color:black;
 }
@@ -627,14 +650,19 @@ body{
   .about__content{
     width:85%;
   }
+  .projectClicked{
+    transform:rotateX(10deg) scale(1);
+  }
   
 }
 
-@media (max-width:838px){
+@media (max-width:866px){
   .about__content--work{
     padding:2rem 0rem 2rem 0.5rem;
   }
-
+  .projectClicked{
+    transform:rotateX(10deg) scale(0.9);
+  }
 }
 @media (max-width:768px){
   
@@ -652,14 +680,11 @@ body{
   }
 
   .home__content--name h2{
-    font-size:2.3rem;
+    font-size:2rem;
+    width:max-content;
   }
   .home__content--description{
     max-width:24rem;
-  }
-
-  .projectClicked{
-    transform: rotateX(10deg) scale(1.2);
   }
 
   .navButtons{
@@ -677,8 +702,17 @@ body{
 }
 
 @media(max-width:670px){
+
+  .projectClicked{
+    transform:rotateX(10deg) scale(0.7);
+  }
   .content{
     gap:1rem;
+  }
+
+  .home__content--description{
+    max-width:32rem;
+    font-size:0.8rem;
   }
 
   .social-icon{
@@ -690,21 +724,29 @@ body{
   .about__content--education, .about__content--work{
     flex-direction:row;
     width:100%;
-    justify-content:space-between;
-    padding: 2rem 1rem 1rem 1rem;
-
-  }
-  .about__content--education{
     justify-content:space-evenly;
+    padding: 1rem 1rem 1rem 1rem;
+
   }
 
-  .work--nau, .work--infy, .work--content{
+  .education--masters, .education--bachelors, .work--nau, .work--infy{
+    gap:0.5rem;
+  }
+
+  .work--nau, .work--infy, .work--content, .education--bachelors, .education--masters{
     flex-direction:column;
     align-items:center;
   }
 
-  .work--content p{
+  .education--contentContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .work--content p, .work--content-small p, .education--contentContainer p{
     text-align:center;
+    font-size:0.8rem;
   }
   
   .separator{
@@ -713,17 +755,17 @@ body{
 }
 
 @media(max-width:540px){
-  .portfolio-projects{
-    grid-template-columns:1fr 1fr;
-    grid-template-rows: 150px 150px;
-  }
-  .project1, .project3{
-    grid-column: 1/4;
-  }
-  .project2, .project4{
-    grid-column: 4/8;
-  }
   .project-heading{}
+  .portfolio__projects{
+    display:flex;
+    flex-direction:column;
+  }
+  #project3{
+    order:4;
+  }
+  .portfolio__projects--item{
+    min-height:4rem;
+  }
 }
 
 @media(max-width:500px){
@@ -745,6 +787,36 @@ body{
   }
   .home__content--description{
     font-size:1rem;
+  }
+  .projectClicked{
+    transform:rotateX(10deg) scale(0.6);
+  }
+}
+
+@media(max-width:360px){
+  .home__content--name h2 {
+    width:fit-content;
+  }
+
+  .home__content--description {
+    font-size:0.8rem;
+  }
+  .prevBtn, .nextBtn{
+    padding:10px;
+  }
+
+  .work--content-small{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+  }
+
+  .work--content{
+    display:none;
+  }
+
+  .projectCard{
+    max-width:18rem;
   }
 }
 

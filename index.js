@@ -8,17 +8,19 @@ function onClick(event){
         const prevPageEle = document.getElementById(pageId);
         const prevPageName = pageId.split("Page")[0];
         prevPageEle.classList.toggle(prevPageName+"Click");
-        if(prevPageName === "cover") displayInstructions(true)
+        if(prevPageName === "cover") displayInstructions(true);
+        if(prevPageName === "about") closeOpenProjects();
     }else if(direction === "from"){
         const currPageEle = document.getElementById(pageId);
         const currPageName = pageId.split("Page")[0];
         currPageEle.classList.add(currPageName+"Click");
+        if(currPageName === "portfolio") closeOpenProjects();
     }
 }
 
 function onCoverClick(event){
-    const coverId = event.target.id;
-    const coverEle = document.getElementById(coverId);
+    //const coverId = event.target.parentElement.id;
+    const coverEle = document.querySelector(".cover");
     coverEle.classList.add("coverClick");
     displayInstructions(false);
 }
@@ -53,14 +55,22 @@ function onProjectClick(event){
     const projEle = event.target.closest(".portfolio__projects--item");
     const projEleId = projEle.id;
     const projCard = document.getElementById(projEleId+"--card");
-    projCard.classList.add('projectClicked');
+        projCard.classList.add('projectClicked');
 }
 
 function onCardClose(event){
-    event.stopPropagation();
-    const projEle = event.target.closest(".portfolio__projects--item");
-    const projEleId = projEle.id;
-    const projCard = document.getElementById(projEleId+"--card");
+     let projCardId = ""
+     //from mouseleave event
+     if(event.classList && event.classList.value.includes("projectCard")){
+        projCardId = event.id;
+     }else{
+        //from close btn
+        event.stopPropagation();
+        const projEle = event.target.closest(".portfolio__projects--item");
+        const projEleId = projEle.id;
+        projCardId = projEleId+"--card";
+     }
+    const projCard = document.getElementById(projCardId);
     projCard.classList.remove('projectClicked');
 }
 
@@ -90,3 +100,17 @@ function getBtnClick(event, direction){
     const targetChild = Array.from(parentElement.children).find(child => child.classList.contains('navButtons'));
     return Array.from(targetChild.children).find(child => child.classList.contains(btnClass));
 }
+
+function initializeEventListeners(){
+    document.addEventListener('DOMContentLoaded', function() {
+        const cardEleList = document.querySelectorAll('.projectCard');
+        for(let i = 0;i<cardEleList.length;i++){
+            cardEleList[i].addEventListener('mouseleave', ()=>{
+                onCardClose(cardEleList[i]);
+            });
+        }
+        
+    });
+}
+
+initializeEventListeners();
