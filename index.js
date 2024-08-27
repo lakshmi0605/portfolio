@@ -1,3 +1,4 @@
+// Triggers page flip on click of prev/next buttons and right/left half
 function onClick(event){
     let eleId ="";
     if(event.target) eleId = event.target.id; //on button click
@@ -18,13 +19,14 @@ function onClick(event){
     }
 }
 
+// Triggered on clicking cover page and flips to next page
 function onCoverClick(event){
-    //const coverId = event.target.parentElement.id;
     const coverEle = document.querySelector(".cover");
     coverEle.classList.add("coverClick");
     displayInstructions(false);
 }
 
+// Display/Hide instructions based on page in the book
 function displayInstructions(displayString){
     let display = ""
     if(displayString) display="visible";
@@ -35,6 +37,7 @@ function displayInstructions(displayString){
     }
 }
 
+// Handles form submission with user details
 function onContactSubmit(event){
     event.preventDefault();
 
@@ -49,7 +52,7 @@ function onContactSubmit(event){
     alert('Form submitted! Check the console for details.');
 }
 
-
+// Displaying project details on clicking the project
 function onProjectClick(event){
     closeOpenProjects();
     const projEle = event.target.closest(".portfolio__projects--item");
@@ -58,6 +61,7 @@ function onProjectClick(event){
         projCard.classList.add('projectClicked');
 }
 
+// Closing the project card details on clicking close button or leaving the project card
 function onCardClose(event){
      let projCardId = ""
      //from mouseleave event
@@ -74,6 +78,7 @@ function onCardClose(event){
     projCard.classList.remove('projectClicked');
 }
 
+// Close all open projects when opening a different project
 function closeOpenProjects(){
     const openProjEle = document.querySelectorAll(".projectClicked");
     for(let i=0;i<openProjEle.length;i++){
@@ -82,16 +87,19 @@ function closeOpenProjects(){
     }
 }
 
+// Triggering flip to previous page on clicking left half of page
 function onLeftClick(event){
     const prevBtn = getBtnClick(event,"left");
     onClick(prevBtn);
 }
 
+// Triggering flip to next page on clicking right half of page
 function onRightClick(event){
     const nextBtn = getBtnClick(event,"right");
     onClick(nextBtn);
 }
 
+// Simulate button click on left/right half of pages to prev/next buttons
 function getBtnClick(event, direction){
     let btnClass = "";
     if(direction === "left") btnClass = 'prevBtn'
@@ -101,6 +109,7 @@ function getBtnClick(event, direction){
     return Array.from(targetChild.children).find(child => child.classList.contains(btnClass));
 }
 
+// Add mouseleave event to project cards on initial load
 function initializeEventListeners(){
     document.addEventListener('DOMContentLoaded', function() {
         const cardEleList = document.querySelectorAll('.projectCard');

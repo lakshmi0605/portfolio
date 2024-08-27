@@ -3,8 +3,6 @@
     padding:0;
     box-sizing:border-box;
     font-family: 'Chakra Petch', sans-serif;
-    /* letter-spacing:0.3rem; */ //removed it as it is effecting social icons
-    /* border:1px solid pink; */
 }
 
 :root{
@@ -22,6 +20,7 @@ body{
 h1{
   letter-spacing:0.5rem;
   text-align:center;
+  padding-left:1rem;
 }
 
 .description{
@@ -57,7 +56,7 @@ h1{
   line-height:1.5rem;
 }
 
-#index-container{
+/* #index-container{
     position:relative;
     width:20%;
     border:1px solid var(--primary-color);
@@ -80,8 +79,6 @@ h1{
 .index__listContainer{
     width:50%;
     color:var(--text-secondary-color);
-   
-    
 }
 
 .index__list{
@@ -92,7 +89,7 @@ h1{
     align-items:center;
     gap:3rem;
     height:100%;
-}
+} */
 
 #book-container{
    position:relative;
@@ -107,12 +104,12 @@ h1{
     transform:rotateX(20deg);
 }
 
-
+/* 
 .spiral-container {
     position: absolute;
     perspective:1000px;
-    width: 10%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
+    width: 10%; 
+    height: 100%; 
     left:-1rem;
     transform:rotateX(20deg);
     transition:all 3s;
@@ -135,23 +132,22 @@ h1{
   }
 
   .circle {
-    width: 42px; /* Ring diameter */
+    width: 42px; 
     height: 42px;
     border:5px solid gray;
     border-radius: 50%;
     position: absolute;
-    transform-style: preserve-3d; /* Ensures 3D transforms are preserved */
+    transform-style: preserve-3d; 
     transform: rotateX(-80deg) rotateZ(-90deg) rotateY(100deg) ;
   }
 
   .ring-innerPage{
     transform: rotateX(-90deg) rotateZ(120deg) rotateY(-90deg) translateX(15px);
-  }
+  } */
 
   section{
     border-radius:20px;
     border-left:2px solid gray;
-    /* box-shadow:1px 2px 5px 10px var(--primary-color); */
   }
 
   .cover,  .back-cover{
@@ -180,12 +176,12 @@ h1{
     transform: rotateX(20deg) rotateY(-210deg);
   }
 
-  .page{
-    transform-origin:center left;
-    transition:all 1s;
-    background-color:var(--primary-color);
-    color:var(--text-secondary-color);
-  }
+.page{
+  transform-origin:center left;
+  transition:all 1s;
+  background-color:var(--primary-color);
+  color:var(--text-secondary-color);
+}
 
 .overlay {
     position: absolute;
@@ -272,7 +268,7 @@ h1{
 
   .icon{
     font-size:20px;
-    color:var(--text-secondary-color);
+    color:var(--secondary-color);
     fill:var(--secondary-color);
   }
 
@@ -481,6 +477,7 @@ h1{
   backdrop-filter:blur(10px);
   border-radius:15px;
 }
+
 .project-heading{
   font-size:2.5rem;
   font-weight:400;
