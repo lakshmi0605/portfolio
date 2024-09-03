@@ -44,12 +44,52 @@ function onContactSubmit(event){
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
+    const createdOn = new Date().toString();
 
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Message:', message);
 
-    alert('Form submitted! Check the console for details.');
+    const data = {name,email,message,createdOn};
+    sendThankYouEmail(data);
+    const isNotificationSuccess = sendNotificationEmail(data);
+
+    if(!isNotificationSuccess){
+        const contactMsg = document.getElementById("contact-msg");
+        contactMsg.innerHTML = `
+        There was an error sending your message. Please try again later, or 
+        <a href="mailto:lakshmipanguluri98@gmail.com" class="errorEmail">contact me directly via email</a>.
+    `;
+    }
+
+    //display thank you instead of form
+    const displayThankyou = document.getElementById("contactCard");
+    displayThankyou.classList.toggle("flipped")
+
+    event.target.reset(); //reset the contact form
+
+}
+
+//send thankyou email for user
+async function sendThankYouEmail(data){
+    try{
+        const emailResponse = await emailjs.send('portfolio_service', 'thankyou_email', data);
+    }catch(error){
+        console.error(error);
+    }
+}
+
+//send notification email to yourself
+async function sendNotificationEmail(data){
+    try{
+        const emailResponse = await emailjs.send('portfolio_service', "notification_email", data);
+        emailjs.send('portfolio_service', "notification_email", data)
+    }catch{
+        console.log(`In Notification ${error}`);
+        return false;
+    }
+    return true;
+    
 }
 
 // Displaying project details on clicking the project
@@ -109,8 +149,14 @@ function getBtnClick(event, direction){
     return Array.from(targetChild.children).find(child => child.classList.contains(btnClass));
 }
 
+// To initialize EmailJS with your public key
+function initializeEmailJS() {
+    emailjs.init('HUcLo3PHd1KurlJOe');
+}
+
 // Add mouseleave event to project cards on initial load
 function initializeEventListeners(){
+     initializeEmailJS();
     document.addEventListener('DOMContentLoaded', function() {
         const cardEleList = document.querySelectorAll('.projectCard');
         for(let i = 0;i<cardEleList.length;i++){

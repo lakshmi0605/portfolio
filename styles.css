@@ -10,6 +10,7 @@
     --secondary-color:#FFFFFF;
     --text-primary-color:#0b090a;
     --text-secondary-color:#FFFFFF;
+    --text-email-color:#ffb700;
     --button-hover-color:#ffb700;
 }
 
@@ -93,7 +94,7 @@ h1{
 
 #book-container{
    position:relative;
-   height:70%;
+   height:80%;
    margin:0rem 15rem ;
    border-radius:10px;
    perspective:1500px;
@@ -341,13 +342,51 @@ h1{
     cursor:pointer;
   }
 
-  .contactForm{
+  .contact-card{
     width:75%;
+    height:70%;
     border:2px solid var(--secondary-color);
     border-radius:20px;
+    perspective: 1500px; /* Adds perspective for 3D effect */
+    position: relative;
+    transform-style: preserve-3d;
+  }
+
+
+.contact-front,
+.contact-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    backface-visibility: hidden;
     padding:1rem 2rem;
+    transition: transform 1s;
+}
+
+
+.contact-back {
+  align-items: center;
+  text-align: center;
+  gap:2rem;
+  transform: rotateY(180deg);
+}
+
+.contact-back p{
+  max-width:24rem;
+}
+
+.contact-card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+  .contactForm{
     display:flex;
     flex-direction:column;
+    justify-content:center;
     align-items:center;
     gap:0.3rem;
   }
@@ -384,6 +423,27 @@ h1{
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 
     2px 2px 12px 2px rgba(255, 149, 0, 0.4);
   z-index:2;
+}
+
+.errorEmail{
+  color: var(--text-secondary-color)
+}
+
+.errorEmail:hover{
+  color: var(--text-email-color)
+}
+
+.hand-wave{
+  display:inline-block;
+  font-size:30px;
+  transform-origin: 70% 70%;
+  animation: wave 1s infinite;
+}
+
+@keyframes wave{
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
 }
 
 
@@ -621,7 +681,7 @@ h1{
 }
 @media (max-width:1800px){
   #book-container{
-    margin:0 20rem;
+    margin:0 12rem;
   }
 }
 
@@ -722,7 +782,7 @@ h1{
     flex-direction:row;
     width:100%;
     justify-content:space-evenly;
-    padding: 1rem 1rem 1rem 1rem;
+    padding:2rem 1rem;
 
   }
 
@@ -788,6 +848,16 @@ h1{
   .projectClicked{
     transform:rotateX(10deg) scale(0.6);
   }
+
+  .work--content-small{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+  }
+
+  .work--content{
+    display:none;
+  }
 }
 
 @media(max-width:360px){
@@ -802,18 +872,11 @@ h1{
     padding:10px;
   }
 
-  .work--content-small{
-    display:flex;
-    flex-direction:column;
-    gap:0.5rem;
-  }
-
-  .work--content{
-    display:none;
-  }
-
   .projectCard{
     max-width:18rem;
+  }
+  .contact-front{
+    padding:1rem;
   }
 }
 

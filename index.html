@@ -23,6 +23,11 @@
 
     <link rel="preload" href="Cover.png" as="image">
 
+    <!-- Emailjs for sending emails to the user -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -233,16 +238,25 @@
                 </section>
                 <section id="contactPage" class="contact page">
                     <div class="full" onclick="onLeftClick(event)"></div>
-                    <h1>Get In Touch!!</h1>
-                    <form class="contactForm" onsubmit="onContactSubmit(event)" >
-                        <label for="name">Name</label>
-                        <input id="name" type="text" value="" required>
-                        <label for="email">Email</label>
-                        <input id="email" type="email"value="" required>
-                        <label for="message">Message</label>
-                        <textarea id="message" rows="3" value="" required> </textarea>
-                        <button class="contact-btn" type="submit">Submit</button>
-                    </form>
+                    <h1>Contact</h1>
+                    <div class="contact-card" id="contactCard">
+                        <div class="contact-front">
+                            <form class="contactForm" onsubmit="onContactSubmit(event)" >
+                                <label for="name">Name</label>
+                                <input id="name" type="text" value="" required>
+                                <label for="email">Email</label>
+                                <input id="email" type="email"value="" required>
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="3" value="" required> </textarea>
+                                <button class="contact-btn" type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <div class="contact-back">
+                            <p>Thank you for reaching out! </p>
+                            <p id="contact-msg">Your message has been received, and I will get back to you as soon as possible.</p>
+                            <p>Keep Smiling <span class="hand-wave">👋</span> </p>
+                        </div>
+                    </div>
                     <div class="navButtons">
                         <button id="to-portfolioPage" class="prevBtn" onClick="onClick(event)"> Prev </button>
                     </div>
