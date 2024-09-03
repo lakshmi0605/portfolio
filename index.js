@@ -83,7 +83,6 @@ async function sendThankYouEmail(data){
 async function sendNotificationEmail(data){
     try{
         const emailResponse = await emailjs.send('portfolio_service', "notification_email", data);
-        emailjs.send('portfolio_service', "notification_email", data)
     }catch{
         console.log(`In Notification ${error}`);
         return false;
