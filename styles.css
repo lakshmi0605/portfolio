@@ -361,6 +361,8 @@ h1{
     display: flex;
     flex-direction:column;
     justify-content: center;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
     backface-visibility: hidden;
     padding:1rem 2rem;
     transition: transform 1s;
@@ -534,6 +536,7 @@ h1{
 
 .overlay-card{
   background-color:transparent;
+  -webkit-backdrop-filter:blur(10px);
   backdrop-filter:blur(10px);
   border-radius:15px;
 }
@@ -560,6 +563,7 @@ h1{
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   /* border: 1px solid rgba(255, 221, 0, 0.7); */
   background: var(--primary-color);
+  -webkit-backdrop-filter:blur(100px);
   backdrop-filter: blur(100px);
   width:25rem;
   border-radius:15px;
